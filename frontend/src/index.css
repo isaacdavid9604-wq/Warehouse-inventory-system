@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #2563eb;
+  }
+
+  body {
+    @apply antialiased text-slate-800 bg-slate-50 selection:bg-blue-100 selection:text-blue-900;
+  }
+
+  /* Accessible focus indicators for keyboard navigation */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+}
+
+/* Modern Web Guidance: Form input styling with :user-invalid and :user-valid */
+input:user-invalid:not(:focus) {
+  border-color: #f87171 !important;
+  background-color: #fef2f2 !important;
+}
+
+input:user-valid:not(:placeholder-shown):not(:focus) {
+  border-color: #34d399 !important;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
